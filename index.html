@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ritual & Roots | The Hair Care Haven</title>
+    
+    <meta property="og:title" content="Ritual & Roots | The Hair Care Haven">
+    <meta property="og:description" content="Healthy hair isn’t magic. It’s ritual. Explore the luxury collection.">
+    <meta property="og:image" content="https://i.postimg.cc/kGwWh4pv/IMG-3597.jpg">
+    <meta property="og:url" content="https://ritualandroots.netlify.app">
+    <meta name="theme-color" content="#FDFBF7">
+
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌿</text></svg>">
+    
+    <style>
+        /* --- LUXURY PALETTE --- */
+        :root {
+            --bg-color: #FDFBF7;      /* Warm Alabaster */
+            --text-color: #3E2723;    /* Dark Loam Brown */
+            --accent-color: #795548;  /* Earthy Clay */
+            --gold-color: #C5A059;    /* Muted Luxury Gold */
+            --white: #FFFFFF;
+            --dark-section: #2D1B18;
+        }
+
+        /* --- GLOBAL RESET & TYPOGRAPHY --- */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body { 
+            background-color: var(--bg-color); 
+            color: var(--text-color); 
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            overflow-x: hidden; 
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 { font-weight: 300; text-transform: uppercase; letter-spacing: 0.1em; }
+        p { font-weight: 300; }
+
+        /* --- NAVIGATION --- */
+        nav {
+            padding: 20px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(253, 251, 247, 0.98);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(62, 39, 35, 0.05);
+        }
+
+        .logo { 
+            font-size: 0.9rem; 
+            font-weight: 700; 
+            letter-spacing: 0.2em; 
+            text-transform: uppercase; 
+            color: var(--text-color); 
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-size: 0.7rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover { color: var(--gold-color); }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            position: relative;
+            width: 100%;
+            height: 95vh;
+            background-color: #EFEBE9;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .hero-img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover; 
+            z-index: 1;
+            filter: brightness(0.85);
+        }
+
+        .hero-overlay {
+            position: relative;
+            z-index: 2;
+            padding: 20px;
+            max-width: 800px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.2); 
+        }
+        
+        h1.hero-title { 
+            font-size: 2.8rem; 
+            margin-bottom: 20px; 
+            color: var(--white);
+            letter-spacing: 0.15em;
+        }
+        
+        .hero-subtitle { 
+            font-size: 1.1rem; 
+            font-style: italic; 
+            color: #F0F0F0; 
+            margin-bottom: 40px; 
+            letter-spacing: 0.05em; 
+        }
+
+        /* --- SCROLL SECTIONS (EDITORIAL) --- */
+        .editorial-section {
+            padding: 100px 10%;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .editorial-text {
+            font-size: 1.1rem;
+            color: var(--text-color);
+            line-height: 1.9;
+        }
+
+        .section-title {
+            font-size: 1.4rem;
+            margin-bottom: 30px;
+            display: inline-block;
+            border-bottom: 1px solid var(--gold-color);
+            padding-bottom: 10px;
+            letter-spacing: 0.2em;
+        }
+
+        /* --- ROUTINE GRID --- */
+        .routine-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        .routine-step {
+            padding: 20px;
+        }
+
+        .step-num {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            border: 1px solid var(--gold-color);
+            border-radius: 50%;
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+            color: var(--gold-color);
+        }
+
+        .step-title {
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .step-desc {
+            font-size: 0.85rem;
+            color: var(--accent-color);
+        }
+
+        /* --- FOUNDER SECTION --- */
+        .founder-section {
+            padding: 100px 5%;
+            background-color: var(--white);
+            border-bottom: 1px solid #EFEBE9;
+        }
+
+        .founder-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 80px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .founder-image-wrapper {
+            flex: 1;
+            max-width: 450px;
+        }
+
+        .founder-img {
+            width: 100%;
+            height: auto;
+            border-radius: 2px;
+            box-shadow: 20px 20px 0px var(--bg-color);
+        }
+
+        .founder-content {
+            flex: 1;
+            text-align: left;
+        }
+
+        .founder-role {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: var(--gold-color);
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .founder-headline {
+            font-size: 2rem;
+            margin-bottom: 25px;
+            line-height: 1.2;
+            color: var(--text-color);
+        }
+
+        .founder-bio {
+            font-size: 1rem;
+            color: var(--accent-color);
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        .founder-cta {
+            text-decoration: none;
+            color: var(--text-color);
+            font-size: 0.9rem;
+            border-bottom: 1px solid var(--gold-color);
+            padding-bottom: 5px;
+            transition: 0.3s;
+            font-style: italic;
+        }
+
+        /* --- PRODUCTS GRID --- */
+        .products-section { 
+            padding: 100px 5%; 
+            background: var(--bg-color);
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 60px;
+        }
+
+        .product-card {
+            background: var(--white);
+            padding: 0 0 30px 0;
+            text-align: center;
+            transition: transform 0.4s ease;
+            border: 1px solid transparent;
+        }
+        
+        /* Carousel CSS - HIGH VISIBILITY ARROWS */
+        .carousel-container {
+            position: relative;
+            width: 100%;
+            height: 400px;
+            margin-bottom: 30px;
+            overflow: hidden;
+            background-color: #F5F5F5;
+        }
+
+        .carousel-slide {
+            display: none;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .carousel-slide.active {
+            display: block;
+            animation: fadeEffect 0.8s;
+        }
+
+        @keyframes fadeEffect {
+            from { opacity: 0.8; }
+            to { opacity: 1; }
+        }
+
+        .arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.9); /* Solid white background */
+            color: #3E2723; /* Dark Brown Arrow Color */
+            border: 1px solid #EFEBE9;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 20px;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .arrow:hover { transform: translateY(-50%) scale(1.1); background: #3E2723; color: #FFF; }
+        .prev { left: 15px; }
+        .next { right: 15px; }
+
+        /* Product Text */
+        .p-content { padding: 0 25px; }
+        
+        .p-name { 
+            font-size: 1rem; 
+            text-transform: uppercase; 
+            letter-spacing: 0.15em; 
+            margin-bottom: 10px; 
+            font-weight: 500; 
+            color: var(--text-color);
+        }
+        
+        .p-desc { 
+            font-size: 0.85rem; 
+            color: var(--accent-color); 
+            margin-bottom: 15px; 
+            line-height: 1.6;
+            min-height: 45px;
+        }
+        
+        .p-ritual { 
+            font-size: 0.75rem; 
+            color: #8D6E63; 
+            font-style: italic; 
+            margin-bottom: 25px; 
+            display: block; 
+            border-top: 1px solid rgba(197, 160, 89, 0.2);
+            padding-top: 15px;
+            width: 60%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .p-price { 
+            font-size: 0.95rem; 
+            font-weight: 500; 
+            color: var(--text-color);
+            margin-bottom: 25px; 
+            display: block;
+            letter-spacing: 0.05em;
+        }
+
+        /* --- BUTTONS --- */
+        .btn {
+            display: inline-block;
+            background: transparent;
+            color: var(--text-color);
+            padding: 15px 35px;
+            text-decoration: none;
+            font-size: 0.7rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            border: 1px solid var(--text-color);
+            transition: all 0.4s ease;
+            cursor: pointer;
+        }
+        
+        .btn:hover { 
+            background: var(--text-color); 
+            color: var(--white); 
+        }
+
+        .btn-hero {
+            border-color: var(--white);
+            color: var(--white);
+        }
+        .btn-hero:hover {
+            background: var(--white);
+            color: var(--text-color);
+        }
+
+        /* --- SIGNATURE SECTION --- */
+        .signature-section {
+            background-color: var(--dark-section);
+            color: #EFEBE9;
+            padding: 100px 10%;
+            text-align: center;
+        }
+
+        .signature-text {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .signature-title {
+            font-size: 1.8rem;
+            color: var(--gold-color);
+            margin-bottom: 20px;
+        }
+
+        /* --- FOOTER --- */
+        footer { 
+            background: var(--bg-color); 
+            color: var(--text-color); 
+            padding: 80px 20px; 
+            text-align: center; 
+            font-size: 0.75rem; 
+            letter-spacing: 0.1em; 
+            border-top: 1px solid #EFEBE9;
+        }
+        
+        footer a { 
+            color: var(--text-color); 
+            text-decoration: none; 
+            margin: 0 20px; 
+            border-bottom: 1px solid transparent;
+            transition: 0.3s; 
+        }
+        footer a:hover { border-bottom: 1px solid var(--text-color); }
+
+        /* --- MOBILE RESPONSIVE --- */
+        @media(max-width: 768px) {
+            /* Fix: Force standard nav links to show, remove logo */
+            .nav-links { 
+                display: flex; 
+                gap: 15px; 
+                width: 100%;
+                justify-content: center;
+            }
+            .nav-links a { font-size: 0.7rem; }
+            .logo { display: none; } 
+            
+            h1.hero-title { font-size: 2rem; }
+            .editorial-section, .products-section, .founder-section { padding: 60px 5%; }
+            .grid, .routine-grid, .product-grid { grid-template-columns: 1fr; gap: 40px; }
+            .carousel-container { height: 350px; }
+            
+            /* Founder Mobile */
+            .founder-container { flex-direction: column; text-align: center; gap: 40px; }
+            .founder-content { text-align: center; }
+            .founder-headline { font-size: 1.5rem; }
+            .founder-img { box-shadow: 10px 10px 0px var(--bg-color); }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">RITUAL & ROOTS</div>
+        <div class="nav-links">
+            <a href="#shop">SHOP</a>
+            <a href="#rituals">RITUALS</a>
+            <a href="https://wa.me/2348166136524">CONTACT</a>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <img src="https://i.postimg.cc/kGwWh4pv/IMG-3597.jpg" alt="Ritual and Roots Texture" class="hero-img">
+        <div class="hero-overlay">
+            <h1 class="hero-title">The Hair Care Haven</h1>
+            <p class="hero-subtitle">Healthy hair isn't magic. It's ritual.</p>
+            <a href="#shop" class="btn btn-hero">Begin The Ritual</a>
+        </div>
+    </header>
+
+    <section id="rituals" class="editorial-section">
+        <h2 class="section-title">Why Rituals Matter</h2>
+        <p class="editorial-text">
+            True hair health is cultivated, not discovered. Ritual & Roots honors your strands through consistent care, intentional products, and mindful routines. Every step is designed to restore balance, awaken growth, and nurture strength from root to tip.
+        </p>
+    </section>
+
+    <section class="editorial-section" style="background-color: #FAFAFA;">
+        <h2 class="section-title">Build Your Routine</h2>
+        <p class="editorial-text" style="font-size: 0.9rem;">Consistency transforms hair. Make it a ritual, not a routine.</p>
+        
+        <div class="routine-grid">
+            <div class="routine-step">
+                <span class="step-num">1</span>
+                <div class="step-title">Cleanse</div>
+                <div class="step-desc">Purify the scalp with Purity & Growth Shampoo.</div>
+            </div>
+            <div class="routine-step">
+                <span class="step-num">2</span>
+                <div class="step-title">Restore</div>
+                <div class="step-desc">Smooth strands with Silken Restore Conditioner.</div>
+            </div>
+            <div class="routine-step">
+                <span class="step-num">3</span>
+                <div class="step-title">Nourish</div>
+                <div class="step-desc">Lock in hydration with Velour Hydration Cream.</div>
+            </div>
+            <div class="routine-step">
+                <span class="step-num">4</span>
+                <div class="step-title">Protect</div>
+                <div class="step-desc">Stimulate growth nightly with Edge & Essence Elixir.</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="founder-section">
+        <div class="founder-container">
+            <div class="founder-image-wrapper">
+                <img src="https://i.postimg.cc/zGYhN6sg/IMG_5688.jpg" alt="Yinka Ezekiel - Founder" class="founder-img">
+            </div>
+            <div class="founder-content">
+                <div class="founder-role">Founder & Ritual Curator</div>
+                <h2 class="founder-headline">Meet the Mind Behind<br>Ritual & Roots</h2>
+                <p class="founder-bio">
+                    Yinka Ezekiel (9ine) is the visionary behind Ritual & Roots, blending passion, science, and ritual to create hair care that honors every strand. From carefully crafted formulas to intentional routines, he believes that healthy hair is more than a look—it’s a lifestyle. His mission is simple: empower you to restore, nourish, and celebrate your roots with consistency, care, and intention.
+                </p>
+                <a href="#shop" class="founder-cta">Discover the ritual he created for you &rarr;</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="shop" class="products-section">
+        <div style="text-align: center; margin-bottom: 60px;">
+            <h2 class="section-title">The Collection</h2>
+            <p>Rooted in care. Formulated for results.</p>
+        </div>
+
+        <div class="product-grid">
+            
+            <div class="product-card" id="p1">
+                <div class="carousel-container">
+                    <button class="arrow prev" onclick="changeSlide('p1', -1)">&#8249;</button>
+                    <img src="https://i.postimg.cc/90wmRNH6/IMG_3595.jpg" class="carousel-slide active">
+                    <img src="https://i.postimg.cc/CM7HmPDC/IMG_3578.jpg" class="carousel-slide">
+                    <img src="https://i.postimg.cc/Pfyz23Zm/IMG_3581.jpg" class="carousel-slide">
+                    <img src="https://i.postimg.cc/59gqn7v8/IMG_3580.jpg" class="carousel-slide">
+                    
+                    <button class="arrow next" onclick="changeSlide('p1', 1)">&#8250;</button>
+                </div>
+                <div class="p-content">
+                    <div class="p-name">Purity & Growth Shampoo</div>
+                    <div class="p-desc">A revitalizing cleanse that purifies the scalp while preserving essential moisture. Supports healthy hair cycles.</div>
+                    <span class="p-ritual">Use weekly to awaken your scalp.</span>
+                    <span class="p-price">₦16,500</span>
+                    <a href="https://wa.me/2348166136524?text=I%20want%20to%20order%20Purity%20Shampoo" class="btn">Add to Ritual</a>
+                </div>
+            </div>
+
+            <div class="product-card" id="p2">
+                 <div class="carousel-container">
+                    <button class="arrow prev" onclick="changeSlide('p2', -1)">&#8249;</button>
+                    <img src="https://i.postimg.cc/zD7S0tWW/IMG_3582.jpg" class="carousel-slide active">
+                    <img src="https://i.postimg.cc/T20qC7mD/IMG_3583.jpg" class="carousel-slide">
+                    <img src="https://i.postimg.cc/xj5ytxHJ/IMG_3584.jpg" class="carousel-slide">
+                    <img src="https://i.postimg.cc/Pfyz23Zm/IMG_3581.jpg" class="carousel-slide">
+                    
+                    <button class="arrow next" onclick="changeSlide('p2', 1)">&#8250;</button>
+                </div>
+                <div class="p-content">
+                    <div class="p-name">Silken Restore Conditioner</div>
+                    <div class="p-desc">Instantly detangles and softens each strand while restoring natural hydration. Locks in smoothness.</div>
+                    <span class="p-ritual">Apply after every wash.</span>
+                    <span class="p-price">₦16,500</span>
+                    <a href="https://wa.me/2348166136524?text=I%20want%20to%20order%20Silken%20Conditioner" class="btn">Add to Ritual</a>
+                </div>
+            </div>
+
+            <div class="product-card" id="p3">
+                 <div class="carousel-container">
+                    <button class="arrow prev" onclick="changeSlide('p3', -1)">&#8249;</button>
+                    <img src="https://i.postimg.cc/QNmk045H/IMG_3585.jpg" class="carousel-slide active">
+                    <img src="https://i.postimg.cc/L4DBNCfq/IMG_3586.jpg" class="carousel-slide">
+                    <img src="https://i.postimg.cc/fWCjB2X0/IMG_3587.jpg" class="carousel-slide">
+                    <img src="https://i.postimg.cc/XNLcQHFr/IMG_3588.jpg" class="carousel-slide">
+                    
+                    <button class="arrow next" onclick="changeSlide('p3', 1)">&#8250;</button>
+                </div>
+                <div class="p-content">
+                    <div class="p-name">Velour Hydration Cream</div>
+                    <div class="p-desc">Infuses each strand with lasting moisture and elasticity. Luxurious texture nourishes throughout the day.</div>
+                    <span class="p-ritual">Massage daily for radiant strands.</span>
+                    <span class="p-price">₦14,500</span>
+                    <a href="https://wa.me/2348166136524?text=I%20want%20to%20order%20Velour%20Cream" class="btn">Add to Ritual</a>
+                </div>
+            </div>
+
+            <div class="product-card" id="p4">
+                 <div class="carousel-container">
+                    <button class="arrow prev" onclick="changeSlide('p4', -1)">&#8249;</button>
+                    <img src="https://i.postimg.cc/Y0d600M7/IMG_3589.jpg" class="carousel-slide active">
+                    <img src="https://i.postimg.cc/GtXFttdb/IMG_3590.jpg" class="carousel-slide">
+                    <img src="https://i.postimg.cc/vT0rTTbd/IMG_3591.jpg" class="carousel-slide">
+                    <img src="https://i.postimg.cc/wMwXMMgY/IMG_3593.jpg" class="carousel-slide">
+                    
+                    <button class="arrow next" onclick="changeSlide('p4', 1)">&#8250;</button>
+                </div>
+                <div class="p-content">
+                    <div class="p-name">Edge & Essence Elixir</div>
+                    <div class="p-desc">A potent blend that stimulates follicles and nurtures the scalp. Designed for stronger, thicker edges.</div>
+                    <span class="p-ritual">Apply nightly for strength.</span>
+                    <span class="p-price">₦12,000</span>
+                    <a href="https://wa.me/2348166136524?text=I%20want%20to%20order%20Edge%20Elixir" class="btn">Add to Ritual</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="signature-section">
+        <div class="signature-text">
+            <h2 class="signature-title">The Crown Jewel</h2>
+            <p style="font-style: italic; opacity: 0.8; margin-bottom: 20px;">Edge & Essence Elixir</p>
+            <p class="editorial-text" style="color: #EFEBE9;">
+                A nightly ritual that stimulates follicles, thickens edges, and restores confidence. With every drop, you nourish not just hair, but the ritual itself.
+            </p>
+            <br>
+            <a href="#p4" class="btn" style="border-color: #C5A059; color: #C5A059;">Shop The Elixir</a>
+        </div>
+    </section>
+
+    <footer>
+        <h3 style="margin-bottom: 20px;">RITUAL & ROOTS</h3>
+        <p style="margin-bottom: 30px; font-style: italic; opacity: 0.7;">Restoring hair through care, consistency, and intention.</p>
+        <div>
+            <a href="https://www.instagram.com/ritualrootshq/" target="_blank">Instagram</a> 
+            <a href="https://wa.me/2348166136524" target="_blank">WhatsApp</a>
+        </div>
+        <br><br>
+        <p style="opacity: 0.5; font-size: 0.6rem;">&copy; 2025 Ritual & Roots</p>
+    </footer>
+
+    <script>
+        function changeSlide(productId, direction) {
+            const container = document.getElementById(productId);
+            const slides = container.getElementsByClassName('carousel-slide');
+            let activeIndex = 0;
+            for (let i = 0; i < slides.length; i++) {
+                if (slides[i].classList.contains('active')) {
+                    activeIndex = i;
+                    slides[i].classList.remove('active');
+                    break;
+                }
+            }
+            let newIndex = activeIndex + direction;
+            if (newIndex >= slides.length) newIndex = 0;
+            if (newIndex < 0) newIndex = slides.length - 1;
+            slides[newIndex].classList.add('active');
+        }
+    </script>
+</body>
+</html>
