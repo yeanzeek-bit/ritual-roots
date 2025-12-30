@@ -1,2 +1,2 @@
 # ritual-roots
-Ritual &amp; Roots
+Ritual &amp; Roots HairCare
